@@ -1,0 +1,6 @@
+{
+    "parent": "item/bow",
+    "textures": {
+        "layer0": "weaponsplus:items/SuperStarBow_pulling_0"
+    }
+}

@@ -29,6 +29,11 @@ public class GlobalEventsWeaponsPlus {
             itemStack.addEnchantment(Enchantment.getEnchantmentByLocation("looting"), 3);
         if (i == ModItems.GUARDIAN_BATTLE_AXE)
             itemStack.addEnchantment(Enchantment.getEnchantmentByLocation("sharpness"), 1);
+        /** Bows */
+        if (i == ModItems.LAPIS_BOW)
+            itemStack.addEnchantment(Enchantment.getEnchantmentByLocation("looting"), 3);
+        if (i == ModItems.GUARDIAN_BOW)
+            itemStack.addEnchantment(Enchantment.getEnchantmentByLocation("power"), 1);
     }
 
     @SubscribeEvent

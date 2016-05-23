@@ -28,6 +28,17 @@ item.SuperStarBattleAxe.name=Super Star Battle Axe
 item.GuardianBattleAxe.name=Guardian Battle Axe
 item.EnderDragonBattleAxe.name=Ender Dragon Battle Axe
 
+#Bows
+item.CoalBow.name=Coal Bow
+item.LapisBow.name=Lapis Bow
+item.RedstoneBow.name=Redstone Bow
+item.EmeraldBow.name=Emerald Bow
+item.ObsidianBow.name=Obsidian Bow
+item.LavaBow.name=Lava Bow
+item.SuperStarBow.name=Super Star Bow
+item.GuardianBow.name=Guardian Bow
+item.EnderDragonBow.name=Ender Dragon Bow
+
 #CONSOLE LOG
 info.weaponsplus.console.config.refresh=Refreshing configuration file.
 info.weaponsplus.console.load.preInit=Begin Pre-initialization
