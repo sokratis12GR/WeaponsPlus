@@ -1,0 +1,19 @@
+[
+{
+  "modid": "weaponsplus",
+  "name": "WeaponsPlus",
+  "description": "An Addon to ArmorPlus which adds weapons",
+  "version": "1.2.1",
+  "mcversion": "1.9.4",
+  "url": "http://minecraft.curseforge.com/projects/weaponsplus",
+  "updateUrl": "",
+  "authorList": ["sokratis12GR"],
+  "credits": "sokratis12GR",
+  "logoFile": "assets/weaponsplus/logo.png",
+  "screenshots": [],
+  "dependencies": [
+    "MinecraftForge",
+    "armorplus"
+  ]
+}
+]

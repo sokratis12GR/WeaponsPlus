@@ -1,0 +1,35 @@
+#en_US.lang File
+
+#CREATIVE TAB
+itemGroup.weaponsplus.creativeTab=WeaponsPlus
+
+#CONFIG GUI
+gui.weaponsplus.config.title=WeaponsPlus Configuration
+
+#Swords
+item.CoalSword.name=Coal Sword
+item.LapisSword.name=Lapis Sword
+item.RedstoneSword.name=Redstone Sword
+item.EmeraldSword.name=Emerald Sword
+item.ObsidianSword.name=Obsidian Sword
+item.LavaSword.name=Lava Sword
+item.SuperStarSword.name=Super Star Sword
+item.GuardianSword.name=Guardian Sword
+item.EnderDragonSword.name=Ender Dragon Sword
+
+#BattleAxes
+item.CoalBattleAxe.name=Coal Battle Axe
+item.LapisBattleAxe.name=Lapis Battle Axe
+item.RedstoneBattleAxe.name=Redstone Battle Axe
+item.EmeraldBattleAxe.name=Emerald Battle Axe
+item.ObsidianBattleAxe.name=Obsidian Battle Axe
+item.LavaBattleAxe.name=Lava Battle Axe
+item.SuperStarBattleAxe.name=Super Star Battle Axe
+item.GuardianBattleAxe.name=Guardian Battle Axe
+item.EnderDragonBattleAxe.name=Ender Dragon Battle Axe
+
+#CONSOLE LOG
+info.weaponsplus.console.config.refresh=Refreshing configuration file.
+info.weaponsplus.console.load.preInit=Begin Pre-initialization
+info.weaponsplus.console.load.init=Begin Initialization
+info.weaponsplus.console.load.postInit=Begin Post-initialization

@@ -1,0 +1,41 @@
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+WeaponsPlus 1.2.1
+{Features Added}
+* Added Recipes for the Battle Axes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+WeaponsPlus 1.2.0
+{Features Added}
+* Battle Axes
+** Coal Battle Axe
+** Redstone Battle Axe
+** Lapis Battle Axe
+** Emerald Battle Axe
+** Obsidian Battle Axe
+** Lava Battle Axe
+** Super Star Battle Axe
+** Guardian Battle Axe
+** Ender Dragon Battle Axe
+* Made all Weapons Repairable
+* Item's Names are now colored
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+WeaponsPlus 1.1.1
+{Features Changed}
+* Blindness level of the Coal Sword from 2 to 1 (It makes no difference in the level)
+{Features Added}
+* Custom Creative Menu
+{Bugs Fixed}
+* Sharpness Enchantment applying to Lapis Sword instead of the Guardian Sword
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+WeaponsPlus 1.1.0
+{Features Added}
+* More Swords
+** Emerald Sword
+** Obsidian Sword
+** Lava Sword
+** Super Star Sword
+** Guardian Sword
+** Ender Dragon Sword
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+WeaponsPlus 1.0.0-ALPHA
+{Created}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
