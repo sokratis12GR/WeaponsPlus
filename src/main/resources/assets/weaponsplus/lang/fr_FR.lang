@@ -7,37 +7,37 @@ itemGroup.weaponsplus.creativeTab=WeaponsPlus
 gui.weaponsplus.config.title=WeaponsPlus Configuration
 
 #Swords
-item.CoalSword.name=Coal Sword
-item.LapisSword.name=Lapis Sword
-item.RedstoneSword.name=Redstone Sword
-item.EmeraldSword.name=Emerald Sword
-item.ObsidianSword.name=Obsidian Sword
-item.LavaSword.name=Lava Sword
-item.SuperStarSword.name=Super Star Sword
-item.GuardianSword.name=Guardian Sword
-item.EnderDragonSword.name=Ender Dragon Sword
+item.CoalSword.name=Épée en Charbon
+item.LapisSword.name=Épée en Lapis
+item.RedstoneSword.name=Épée en Redstone
+item.EmeraldSword.name=Épée en Émeraude
+item.ObsidianSword.name=Épée en Obsidienne
+item.LavaSword.name=Épée en Lave
+item.SuperStarSword.name=Épée en Étoile Formidable
+item.GuardianSword.name=Épée du Guardien
+item.EnderDragonSword.name=Épée du Dragon de l'Ender
 
 #BattleAxes
-item.CoalBattleAxe.name=Coal Battle Axe
-item.LapisBattleAxe.name=Lapis Battle Axe
-item.RedstoneBattleAxe.name=Redstone Battle Axe
-item.EmeraldBattleAxe.name=Emerald Battle Axe
-item.ObsidianBattleAxe.name=Obsidian Battle Axe
-item.LavaBattleAxe.name=Lava Battle Axe
-item.SuperStarBattleAxe.name=Super Star Battle Axe
-item.GuardianBattleAxe.name=Guardian Battle Axe
-item.EnderDragonBattleAxe.name=Ender Dragon Battle Axe
+item.CoalBattleAxe.name=Hache de Guerre en Charbon
+item.LapisBattleAxe.name=Hache de Guerre en Lapis
+item.RedstoneBattleAxe.name=Hache de Guerre en Redstone
+item.EmeraldBattleAxe.name=Hache de Guerre en Émeraude
+item.ObsidianBattleAxe.name=Hache de Guerre en Obsidienne
+item.LavaBattleAxe.name=Hache de Guerre en Lave
+item.SuperStarBattleAxe.name=Hache de Guerre en Étoile Formidable
+item.GuardianBattleAxe.name=Hache de Guerre du Guardien
+item.EnderDragonBattleAxe.name=Hache de Guerre du Dragon de l'Ender
 
 #Bows
-item.CoalBow.name=Coal Bow
-item.LapisBow.name=Lapis Bow
-item.RedstoneBow.name=Redstone Bow
-item.EmeraldBow.name=Emerald Bow
-item.ObsidianBow.name=Obsidian Bow
-item.LavaBow.name=Lava Bow
-item.SuperStarBow.name=Super Star Bow
-item.GuardianBow.name=Guardian Bow
-item.EnderDragonBow.name=Ender Dragon Bow
+item.CoalBow.name=Arc en Charbon
+item.LapisBow.name=Arc en Lapis
+item.RedstoneBow.name=Arc en Redstone
+item.EmeraldBow.name=Arc en Émeraude
+item.ObsidianBow.name=Arc en Obsidienne
+item.LavaBow.name=Arc en Lave
+item.SuperStarBow.name=Arc en Étoile Formidable
+item.GuardianBow.name=Arc du Guardien
+item.EnderDragonBow.name=Arc du Dragon de l'Ender
 
 #CONSOLE LOG
 info.weaponsplus.console.config.refresh=Refreshing configuration file.
