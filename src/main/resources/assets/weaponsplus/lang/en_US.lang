@@ -40,7 +40,7 @@ item.GuardianBow.name=Guardian Bow
 item.EnderDragonBow.name=Ender Dragon Bow
 
 #CONSOLE LOG
-info.weaponsplus.console.config.refresh=Refreshing configuration file.
-info.weaponsplus.console.load.preInit=Begin Pre-initialization
-info.weaponsplus.console.load.init=Begin Initialization
-info.weaponsplus.console.load.postInit=Begin Post-initialization
+info.weaponsplus.console.config.refresh=[WeaponsPlus] Refreshing configuration file.
+info.weaponsplus.console.load.preInit=[WeaponsPlus] Begin Pre-initialization
+info.weaponsplus.console.load.init=[WeaponsPlus] Begin Initialization
+info.weaponsplus.console.load.postInit=[WeaponsPlus] Begin Post-initialization

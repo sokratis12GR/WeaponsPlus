@@ -72,6 +72,6 @@ public class CommandWeaponsPlus implements ICommand {
         sender.addChatMessage(new TextComponentString(TextFormatting.DARK_RED + "[" + WeaponsPlus.MODNAME + " (" + WeaponsPlus.VERSION + ") " + "by" + TextFormatting.GOLD + " sokratis12GR]"));
         sender.addChatMessage(new TextComponentString(TextFormatting.RED + "[Thank You " + sender.getName() + " For Using " + WeaponsPlus.MODNAME + "]"));
         sender.addChatMessage(new TextComponentString(TextFormatting.GREEN + "[" + "modid: " + WeaponsPlus.MODID + "]"));
-        sender.addChatMessage(new TextComponentString(TextFormatting.DARK_RED + "[This Mod is on BETA so expect many Bugs and Errors]"));
+        sender.addChatMessage(new TextComponentString(TextFormatting.GRAY + "[Minecraft Version: " + server.getMinecraftVersion() + "]"));
     }
 }

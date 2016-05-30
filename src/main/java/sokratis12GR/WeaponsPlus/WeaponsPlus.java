@@ -23,15 +23,16 @@ import org.apache.logging.log4j.Logger;
 import sokratis12GR.WeaponsPlus.client.gui.CreativeTabWeaponsPlus;
 import sokratis12GR.WeaponsPlus.command.CommandWeaponsPlus;
 import sokratis12GR.WeaponsPlus.registry.ModItems;
+import sokratis12GR.WeaponsPlus.resources.ConfigHandler;
 import sokratis12GR.WeaponsPlus.resources.GlobalEventsWeaponsPlus;
 import sokratis12GR.WeaponsPlus.util.TextHelper;
 
 import java.io.File;
 
-@Mod(modid = WeaponsPlus.MODID, name = WeaponsPlus.MODNAME, version = WeaponsPlus.VERSION /**, dependencies = "required-after:ArmorPlus@[1.14.0-1.9.4,)" */, guiFactory = WeaponsPlus.GUIFACTORY, updateJSON = "https://raw.githubusercontent.com/sokratis12GR/VersionUpdate/gh-pages/WeaponsPlus.json")
+@Mod(modid = WeaponsPlus.MODID, name = WeaponsPlus.MODNAME, version = WeaponsPlus.VERSION, dependencies = "required-after:armorplus@[2.2.0,)", guiFactory = WeaponsPlus.GUIFACTORY, updateJSON = "https://raw.githubusercontent.com/sokratis12GR/VersionUpdate/gh-pages/WeaponsPlus.json")
 public class WeaponsPlus {
     public static final String MODID = "weaponsplus";
-    public static final String VERSION = "1.3.0";
+    public static final String VERSION = "1.8.0";
     public static final String MODNAME = "WeaponsPlus";
     public static final String CLIENTPROXY = "sokratis12GR.WeaponsPlus.ClientProxy";
     public static final String COMMONPROXY = "sokratis12GR.WeaponsPlus.CommonProxy";
@@ -57,103 +58,116 @@ public class WeaponsPlus {
         logger.info(TextHelper.localize("info." + WeaponsPlus.MODID + ".console.load.init"));
         NetworkRegistry.INSTANCE.registerGuiHandler(this, GuiHandler);
         MinecraftForge.EVENT_BUS.register(new GlobalEventsWeaponsPlus());
-
     }
 
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
         logger.info(TextHelper.localize("info." + WeaponsPlus.MODID + ".console.load.preInit"));
         ModItems.init();
-        configDir = new File(event.getModConfigurationDirectory() + "/" + WeaponsPlus.MODID);
+        configDir = new File(event.getModConfigurationDirectory() + "/" + "sokratis12GR's Mods" + "/" + WeaponsPlus.MODID);
         configDir.mkdirs();
         sokratis12GR.WeaponsPlus.util.Logger.init(new File(configDir.getPath()));
-        proxy.registerRenderers(this);
-
+        ConfigHandler.init(new File(configDir.getPath(), WeaponsPlus.MODID + ".cfg"));
         // Recipes
         // Shaped
         /** Swords */
-        GameRegistry.addRecipe(new ItemStack(ModItems.COAL_SWORD, 1), new Object[]
-                {"XCX", "XCX", "XSX", Character.valueOf('C'), new ItemStack(Items.COAL, 1), Character.valueOf('S'), new ItemStack(Items.STICK, 1),});
-        GameRegistry.addRecipe(new ItemStack(ModItems.LAPIS_SWORD, 1), new Object[]
-                {"XLX", "XLX", "XSX", Character.valueOf('L'), new ItemStack(Blocks.LAPIS_BLOCK, 1), Character.valueOf('S'), new ItemStack(Items.STICK, 1),});
-        GameRegistry.addRecipe(new ItemStack(ModItems.REDSTONE_SWORD, 1), new Object[]
-                {"XRX", "XRX", "XSX", Character.valueOf('R'), new ItemStack(Blocks.REDSTONE_BLOCK, 1), Character.valueOf('S'), new ItemStack(Items.STICK, 1),});
-        GameRegistry.addRecipe(new ItemStack(ModItems.EMERALD_SWORD, 1), new Object[]
-                {"XEX", "XEX", "XSX", Character.valueOf('E'), new ItemStack(Items.EMERALD, 1), Character.valueOf('S'), new ItemStack(Items.STICK, 1),});
-        GameRegistry.addRecipe(new ItemStack(ModItems.OBSIDIAN_SWORD, 1), new Object[]
-                {"XOX", "XOX", "XSX", Character.valueOf('O'), new ItemStack(Blocks.OBSIDIAN, 1), Character.valueOf('S'), new ItemStack(Items.STICK, 1),});
-        GameRegistry.addRecipe(new ItemStack(ModItems.GUARDIAN_SWORD, 1), new Object[]
-                {"XPX", "XPX", "XSX", Character.valueOf('P'), new ItemStack(Items.PRISMARINE_SHARD, 1), Character.valueOf('S'), new ItemStack(Items.STICK, 1),});
-        GameRegistry.addRecipe(new ItemStack(ModItems.ENDER_DRAGON_SWORD, 1), new Object[]
-                {"XEX", "XEX", "XSX", Character.valueOf('E'), new ItemStack(Item.getByNameOrId("armorplus:EnderDragonScale"), 1), Character.valueOf('S'), new ItemStack(Items.STICK, 1),});
+        if (ConfigHandler.enableSwordsRecipes) {
+            GameRegistry.addRecipe(new ItemStack(ModItems.COAL_SWORD, 1), new Object[]
+                    {"XCX", "XCX", "XSX", Character.valueOf('C'), new ItemStack(Items.COAL, 1), Character.valueOf('S'), new ItemStack(Items.STICK, 1),});
+            GameRegistry.addRecipe(new ItemStack(ModItems.LAPIS_SWORD, 1), new Object[]
+                    {"XLX", "XLX", "XSX", Character.valueOf('L'), new ItemStack(Blocks.LAPIS_BLOCK, 1), Character.valueOf('S'), new ItemStack(Items.STICK, 1),});
+            GameRegistry.addRecipe(new ItemStack(ModItems.REDSTONE_SWORD, 1), new Object[]
+                    {"XRX", "XRX", "XSX", Character.valueOf('R'), new ItemStack(Blocks.REDSTONE_BLOCK, 1), Character.valueOf('S'), new ItemStack(Items.STICK, 1),});
+            GameRegistry.addRecipe(new ItemStack(ModItems.EMERALD_SWORD, 1), new Object[]
+                    {"XEX", "XEX", "XSX", Character.valueOf('E'), new ItemStack(Items.EMERALD, 1), Character.valueOf('S'), new ItemStack(Items.STICK, 1),});
+            GameRegistry.addRecipe(new ItemStack(ModItems.OBSIDIAN_SWORD, 1), new Object[]
+                    {"XOX", "XOX", "XSX", Character.valueOf('O'), new ItemStack(Blocks.OBSIDIAN, 1), Character.valueOf('S'), new ItemStack(Items.STICK, 1),});
+            GameRegistry.addRecipe(new ItemStack(ModItems.GUARDIAN_SWORD, 1), new Object[]
+                    {"XGX", "XGX", "XSX", Character.valueOf('G'), new ItemStack(Item.getByNameOrId("armorplus:GuardianScale"), 1), Character.valueOf('S'), new ItemStack(Items.STICK, 1),});
+            GameRegistry.addRecipe(new ItemStack(ModItems.ENDER_DRAGON_SWORD, 1), new Object[]
+                    {"XEX", "XEX", "XSX", Character.valueOf('E'), new ItemStack(Item.getByNameOrId("armorplus:EnderDragonScale"), 1), Character.valueOf('S'), new ItemStack(Items.STICK, 1),});
+            GameRegistry.addRecipe(new ItemStack(ModItems.SUPER_STAR_SWORD, 1), new Object[]
+                    {"XWX", "XWX", "XSX", Character.valueOf('W'), new ItemStack(Item.getByNameOrId("armorplus:WitherBone"), 1), Character.valueOf('S'), new ItemStack(Items.STICK, 1),});
+        }
         /** Battle Axes */
-        GameRegistry.addRecipe(new ItemStack(ModItems.COAL_BATTLE_AXE, 1), new Object[]
-                {"CXC", "CSC", "XSX", Character.valueOf('C'), new ItemStack(Items.COAL, 1), Character.valueOf('S'), new ItemStack(Items.STICK, 1),});
-        GameRegistry.addRecipe(new ItemStack(ModItems.LAPIS_BATTLE_AXE, 1), new Object[]
-                {"LXL", "LSL", "XSX", Character.valueOf('L'), new ItemStack(Blocks.LAPIS_BLOCK, 1), Character.valueOf('S'), new ItemStack(Items.STICK, 1),});
-        GameRegistry.addRecipe(new ItemStack(ModItems.REDSTONE_BATTLE_AXE, 1), new Object[]
-                {"RXR", "RSR", "XSX", Character.valueOf('R'), new ItemStack(Blocks.REDSTONE_BLOCK, 1), Character.valueOf('S'), new ItemStack(Items.STICK, 1),});
-        GameRegistry.addRecipe(new ItemStack(ModItems.EMERALD_BATTLE_AXE, 1), new Object[]
-                {"EXE", "ESE", "XSX", Character.valueOf('E'), new ItemStack(Items.EMERALD, 1), Character.valueOf('S'), new ItemStack(Items.STICK, 1),});
-        GameRegistry.addRecipe(new ItemStack(ModItems.OBSIDIAN_BATTLE_AXE, 1), new Object[]
-                {"OXO", "OSO", "XSX", Character.valueOf('O'), new ItemStack(Blocks.OBSIDIAN, 1), Character.valueOf('S'), new ItemStack(Items.STICK, 1),});
-        GameRegistry.addRecipe(new ItemStack(ModItems.GUARDIAN_BATTLE_AXE, 1), new Object[]
-                {"PXP", "PSP", "XSX", Character.valueOf('P'), new ItemStack(Items.PRISMARINE_SHARD, 1), Character.valueOf('S'), new ItemStack(Items.STICK, 1),});
-        GameRegistry.addRecipe(new ItemStack(ModItems.ENDER_DRAGON_BATTLE_AXE, 1), new Object[]
-                {"EXE", "ESE", "XSX", Character.valueOf('E'), new ItemStack(Item.getByNameOrId("armorplus:EnderDragonScale"), 1), Character.valueOf('S'), new ItemStack(Items.STICK, 1),});
+        if (ConfigHandler.enableBattleAxesRecipes) {
+            GameRegistry.addRecipe(new ItemStack(ModItems.COAL_BATTLE_AXE, 1), new Object[]
+                    {"CXC", "CSC", "XSX", Character.valueOf('C'), new ItemStack(Items.COAL, 1), Character.valueOf('S'), new ItemStack(Items.STICK, 1),});
+            GameRegistry.addRecipe(new ItemStack(ModItems.LAPIS_BATTLE_AXE, 1), new Object[]
+                    {"LXL", "LSL", "XSX", Character.valueOf('L'), new ItemStack(Blocks.LAPIS_BLOCK, 1), Character.valueOf('S'), new ItemStack(Items.STICK, 1),});
+            GameRegistry.addRecipe(new ItemStack(ModItems.REDSTONE_BATTLE_AXE, 1), new Object[]
+                    {"RXR", "RSR", "XSX", Character.valueOf('R'), new ItemStack(Blocks.REDSTONE_BLOCK, 1), Character.valueOf('S'), new ItemStack(Items.STICK, 1),});
+            GameRegistry.addRecipe(new ItemStack(ModItems.EMERALD_BATTLE_AXE, 1), new Object[]
+                    {"EXE", "ESE", "XSX", Character.valueOf('E'), new ItemStack(Items.EMERALD, 1), Character.valueOf('S'), new ItemStack(Items.STICK, 1),});
+            GameRegistry.addRecipe(new ItemStack(ModItems.OBSIDIAN_BATTLE_AXE, 1), new Object[]
+                    {"OXO", "OSO", "XSX", Character.valueOf('O'), new ItemStack(Blocks.OBSIDIAN, 1), Character.valueOf('S'), new ItemStack(Items.STICK, 1),});
+            GameRegistry.addRecipe(new ItemStack(ModItems.GUARDIAN_BATTLE_AXE, 1), new Object[]
+                    {"GXG", "GSG", "XSX", Character.valueOf('G'), new ItemStack(Item.getByNameOrId("armorplus:GuardianScale"), 1), Character.valueOf('S'), new ItemStack(Items.STICK, 1),});
+            GameRegistry.addRecipe(new ItemStack(ModItems.ENDER_DRAGON_BATTLE_AXE, 1), new Object[]
+                    {"EXE", "ESE", "XSX", Character.valueOf('E'), new ItemStack(Item.getByNameOrId("armorplus:EnderDragonScale"), 1), Character.valueOf('S'), new ItemStack(Items.STICK, 1),});
+            GameRegistry.addRecipe(new ItemStack(ModItems.SUPER_STAR_BATTLE_AXE, 1), new Object[]
+                    {"WXW", "WSW", "XSX", Character.valueOf('W'), new ItemStack(Item.getByNameOrId("armorplus:WitherBone"), 1), Character.valueOf('S'), new ItemStack(Items.STICK, 1),});
+        }
         /** Bows */
-        // Coal Bow
-        GameRegistry.addRecipe(new ItemStack(ModItems.COAL_BOW, 1), new Object[]
-                {"XCS", "CXS", "XCS", Character.valueOf('C'), new ItemStack(Items.COAL, 1), Character.valueOf('S'), new ItemStack(Items.STRING, 1),});
-        GameRegistry.addRecipe(new ItemStack(ModItems.COAL_BOW, 1), new Object[]
-                {"SCX", "SXC", "SCX", Character.valueOf('C'), new ItemStack(Items.COAL, 1), Character.valueOf('S'), new ItemStack(Items.STRING, 1),});
-        // Lapis Bow
-        GameRegistry.addRecipe(new ItemStack(ModItems.LAPIS_BOW, 1), new Object[]
-                {"XLS", "LXS", "XLS", Character.valueOf('L'), new ItemStack(Blocks.LAPIS_BLOCK, 1), Character.valueOf('S'), new ItemStack(Items.STRING, 1),});
-        GameRegistry.addRecipe(new ItemStack(ModItems.LAPIS_BOW, 1), new Object[]
-                {"SLX", "SXL", "SLX", Character.valueOf('L'), new ItemStack(Blocks.LAPIS_BLOCK, 1), Character.valueOf('S'), new ItemStack(Items.STRING, 1),});
-        // Redstone Bow
-        GameRegistry.addRecipe(new ItemStack(ModItems.REDSTONE_BOW, 1), new Object[]
-                {"XRS", "RXS", "XRS", Character.valueOf('R'), new ItemStack(Blocks.REDSTONE_BLOCK, 1), Character.valueOf('S'), new ItemStack(Items.STRING, 1),});
-        GameRegistry.addRecipe(new ItemStack(ModItems.REDSTONE_BOW, 1), new Object[]
-                {"SRX", "SXR", "SRX", Character.valueOf('R'), new ItemStack(Blocks.REDSTONE_BLOCK, 1), Character.valueOf('S'), new ItemStack(Items.STRING, 1),});
-        // Emerald Bow
-        GameRegistry.addRecipe(new ItemStack(ModItems.EMERALD_BOW, 1), new Object[]
-                {"XES", "EXS", "XES", Character.valueOf('E'), new ItemStack(Items.EMERALD, 1), Character.valueOf('S'), new ItemStack(Items.STRING, 1),});
-        GameRegistry.addRecipe(new ItemStack(ModItems.EMERALD_BOW, 1), new Object[]
-                {"SEX", "SXE", "SEX", Character.valueOf('E'), new ItemStack(Items.EMERALD, 1), Character.valueOf('S'), new ItemStack(Items.STRING, 1),});
-        // Obsidian Bow
-        GameRegistry.addRecipe(new ItemStack(ModItems.OBSIDIAN_BOW, 1), new Object[]
-                {"XOS", "OXS", "XOS", Character.valueOf('O'), new ItemStack(Blocks.OBSIDIAN, 1), Character.valueOf('S'), new ItemStack(Items.STRING, 1),});
-        GameRegistry.addRecipe(new ItemStack(ModItems.OBSIDIAN_BOW, 1), new Object[]
-                {"SOX", "SXO", "SOX", Character.valueOf('O'), new ItemStack(Blocks.OBSIDIAN, 1), Character.valueOf('S'), new ItemStack(Items.STRING, 1),});
-        // Guardian Bow
-        GameRegistry.addRecipe(new ItemStack(ModItems.GUARDIAN_BOW, 1), new Object[]
-                {"XPS", "PXS", "XPS", Character.valueOf('P'), new ItemStack(Items.PRISMARINE_SHARD, 1), Character.valueOf('S'), new ItemStack(Items.STRING, 1),});
-        GameRegistry.addRecipe(new ItemStack(ModItems.GUARDIAN_BOW, 1), new Object[]
-                {"SPX", "SXP", "SPX", Character.valueOf('P'), new ItemStack(Items.PRISMARINE_SHARD, 1), Character.valueOf('S'), new ItemStack(Items.STRING, 1),});
-        // Ender Dragon Bow
-        GameRegistry.addRecipe(new ItemStack(ModItems.ENDER_DRAGON_BOW, 1), new Object[]
-                {"XES", "EXS", "XES", Character.valueOf('E'), new ItemStack(Item.getByNameOrId("armorplus:EnderDragonScale"), 1), Character.valueOf('S'), new ItemStack(Items.STRING, 1),});
-        GameRegistry.addRecipe(new ItemStack(ModItems.ENDER_DRAGON_BOW, 1), new Object[]
-                {"SEX", "SXE", "SEX", Character.valueOf('E'), new ItemStack(Item.getByNameOrId("armorplus:EnderDragonScale"), 1), Character.valueOf('S'), new ItemStack(Items.STRING, 1),});
-
+        if (ConfigHandler.enableBowsRecipes) {
+            // Coal Bow
+            GameRegistry.addRecipe(new ItemStack(ModItems.COAL_BOW, 1), new Object[]
+                    {"XCS", "CXS", "XCS", Character.valueOf('C'), new ItemStack(Items.COAL, 1), Character.valueOf('S'), new ItemStack(Items.STRING, 1),});
+            GameRegistry.addRecipe(new ItemStack(ModItems.COAL_BOW, 1), new Object[]
+                    {"SCX", "SXC", "SCX", Character.valueOf('C'), new ItemStack(Items.COAL, 1), Character.valueOf('S'), new ItemStack(Items.STRING, 1),});
+            // Lapis Bow
+            GameRegistry.addRecipe(new ItemStack(ModItems.LAPIS_BOW, 1), new Object[]
+                    {"XLS", "LXS", "XLS", Character.valueOf('L'), new ItemStack(Blocks.LAPIS_BLOCK, 1), Character.valueOf('S'), new ItemStack(Items.STRING, 1),});
+            GameRegistry.addRecipe(new ItemStack(ModItems.LAPIS_BOW, 1), new Object[]
+                    {"SLX", "SXL", "SLX", Character.valueOf('L'), new ItemStack(Blocks.LAPIS_BLOCK, 1), Character.valueOf('S'), new ItemStack(Items.STRING, 1),});
+            // Redstone Bow
+            GameRegistry.addRecipe(new ItemStack(ModItems.REDSTONE_BOW, 1), new Object[]
+                    {"XRS", "RXS", "XRS", Character.valueOf('R'), new ItemStack(Blocks.REDSTONE_BLOCK, 1), Character.valueOf('S'), new ItemStack(Items.STRING, 1),});
+            GameRegistry.addRecipe(new ItemStack(ModItems.REDSTONE_BOW, 1), new Object[]
+                    {"SRX", "SXR", "SRX", Character.valueOf('R'), new ItemStack(Blocks.REDSTONE_BLOCK, 1), Character.valueOf('S'), new ItemStack(Items.STRING, 1),});
+            // Emerald Bow
+            GameRegistry.addRecipe(new ItemStack(ModItems.EMERALD_BOW, 1), new Object[]
+                    {"XES", "EXS", "XES", Character.valueOf('E'), new ItemStack(Items.EMERALD, 1), Character.valueOf('S'), new ItemStack(Items.STRING, 1),});
+            GameRegistry.addRecipe(new ItemStack(ModItems.EMERALD_BOW, 1), new Object[]
+                    {"SEX", "SXE", "SEX", Character.valueOf('E'), new ItemStack(Items.EMERALD, 1), Character.valueOf('S'), new ItemStack(Items.STRING, 1),});
+            // Obsidian Bow
+            GameRegistry.addRecipe(new ItemStack(ModItems.OBSIDIAN_BOW, 1), new Object[]
+                    {"XOS", "OXS", "XOS", Character.valueOf('O'), new ItemStack(Blocks.OBSIDIAN, 1), Character.valueOf('S'), new ItemStack(Items.STRING, 1),});
+            GameRegistry.addRecipe(new ItemStack(ModItems.OBSIDIAN_BOW, 1), new Object[]
+                    {"SOX", "SXO", "SOX", Character.valueOf('O'), new ItemStack(Blocks.OBSIDIAN, 1), Character.valueOf('S'), new ItemStack(Items.STRING, 1),});
+            // Guardian Bow
+            GameRegistry.addRecipe(new ItemStack(ModItems.GUARDIAN_BOW, 1), new Object[]
+                    {"XGS", "GXS", "XGS", Character.valueOf('G'), new ItemStack(Item.getByNameOrId("armorplus:GuardianScale"), 1), Character.valueOf('S'), new ItemStack(Items.STRING, 1),});
+            GameRegistry.addRecipe(new ItemStack(ModItems.GUARDIAN_BOW, 1), new Object[]
+                    {"SGX", "SXG", "SGX", Character.valueOf('G'), new ItemStack(Item.getByNameOrId("armorplus:GuardianScale"), 1), Character.valueOf('S'), new ItemStack(Items.STRING, 1),});
+            // Ender Dragon Bow
+            GameRegistry.addRecipe(new ItemStack(ModItems.ENDER_DRAGON_BOW, 1), new Object[]
+                    {"XES", "EXS", "XES", Character.valueOf('E'), new ItemStack(Item.getByNameOrId("armorplus:EnderDragonScale"), 1), Character.valueOf('S'), new ItemStack(Items.STRING, 1),});
+            GameRegistry.addRecipe(new ItemStack(ModItems.ENDER_DRAGON_BOW, 1), new Object[]
+                    {"SEX", "SXE", "SEX", Character.valueOf('E'), new ItemStack(Item.getByNameOrId("armorplus:EnderDragonScale"), 1), Character.valueOf('S'), new ItemStack(Items.STRING, 1),});
+            // Super Star Bow
+            GameRegistry.addRecipe(new ItemStack(ModItems.SUPER_STAR_BOW, 1), new Object[]
+                    {"XWS", "WXS", "XWS", Character.valueOf('W'), new ItemStack(Item.getByNameOrId("armorplus:WitherBone"), 1), Character.valueOf('S'), new ItemStack(Items.STRING, 1),});
+            GameRegistry.addRecipe(new ItemStack(ModItems.SUPER_STAR_BOW, 1), new Object[]
+                    {"SWX", "SXW", "SWX", Character.valueOf('W'), new ItemStack(Item.getByNameOrId("armorplus:WitherBone"), 1), Character.valueOf('S'), new ItemStack(Items.STRING, 1),});
+        }
         // Shapeless
         /** Swords */
-        GameRegistry.addShapelessRecipe(new ItemStack(ModItems.LAVA_SWORD, 1), new Object[]
-                {new ItemStack(ModItems.OBSIDIAN_SWORD, 1), new ItemStack(Items.LAVA_BUCKET, 1), new ItemStack(ModItems.OBSIDIAN_SWORD, 1),});
-        GameRegistry.addShapelessRecipe(new ItemStack(ModItems.SUPER_STAR_SWORD, 1), new Object[]
-                {new ItemStack(ModItems.OBSIDIAN_SWORD, 1), new ItemStack(Items.NETHER_STAR, 1), new ItemStack(ModItems.OBSIDIAN_SWORD, 1),});
+        if (ConfigHandler.enableSwordsRecipes) {
+            GameRegistry.addShapelessRecipe(new ItemStack(ModItems.LAVA_SWORD, 1), new Object[]
+                    {new ItemStack(ModItems.OBSIDIAN_SWORD, 1), new ItemStack(Items.LAVA_BUCKET, 1), new ItemStack(ModItems.OBSIDIAN_SWORD, 1),});
+        }
         /** Battle Axes */
-        GameRegistry.addShapelessRecipe(new ItemStack(ModItems.LAVA_BATTLE_AXE, 1), new Object[]
-                {new ItemStack(ModItems.OBSIDIAN_BATTLE_AXE, 1), new ItemStack(Items.LAVA_BUCKET, 1), new ItemStack(ModItems.OBSIDIAN_BATTLE_AXE, 1),});
-        GameRegistry.addShapelessRecipe(new ItemStack(ModItems.SUPER_STAR_BATTLE_AXE, 1), new Object[]
-                {new ItemStack(ModItems.OBSIDIAN_BATTLE_AXE, 1), new ItemStack(Items.NETHER_STAR, 1), new ItemStack(ModItems.OBSIDIAN_BATTLE_AXE, 1),});
+        if (ConfigHandler.enableBattleAxesRecipes) {
+            GameRegistry.addShapelessRecipe(new ItemStack(ModItems.LAVA_BATTLE_AXE, 1), new Object[]
+                    {new ItemStack(ModItems.OBSIDIAN_BATTLE_AXE, 1), new ItemStack(Items.LAVA_BUCKET, 1), new ItemStack(ModItems.OBSIDIAN_BATTLE_AXE, 1),});
+        }
         /** Bows */
-        GameRegistry.addShapelessRecipe(new ItemStack(ModItems.LAVA_BOW, 1), new Object[]
-                {new ItemStack(ModItems.OBSIDIAN_BOW, 1), new ItemStack(Items.LAVA_BUCKET, 1), new ItemStack(ModItems.OBSIDIAN_BOW, 1),});
-        GameRegistry.addShapelessRecipe(new ItemStack(ModItems.SUPER_STAR_BOW, 1), new Object[]
-                {new ItemStack(ModItems.OBSIDIAN_BOW, 1), new ItemStack(Items.NETHER_STAR, 1), new ItemStack(ModItems.OBSIDIAN_BOW, 1),});
+        if (ConfigHandler.enableBowsRecipes) {
+            GameRegistry.addShapelessRecipe(new ItemStack(ModItems.LAVA_BOW, 1), new Object[]
+                    {new ItemStack(ModItems.OBSIDIAN_BOW, 1), new ItemStack(Items.LAVA_BUCKET, 1), new ItemStack(ModItems.OBSIDIAN_BOW, 1),});
+        }
+        proxy.registerRenderers(this);
     }
 
     @EventHandler
