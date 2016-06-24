@@ -1,0 +1,46 @@
+#zh_CN.lang File
+
+#CREATIVE TAB
+#itemGroup.weaponsplus.creativeTab=WeaponsPlus
+
+#CONFIG GUI
+gui.weaponsplus.config.title=WeaponsPlus 配置
+
+#Swords
+item.CoalSword.name=煤剑
+item.LapisSword.name=青金石剑
+item.RedstoneSword.name=红石剑
+item.EmeraldSword.name=绿宝石剑
+item.ObsidianSword.name=黑曜石剑
+item.LavaSword.name=熔岩剑
+item.SuperStarSword.name=下界之星剑
+item.GuardianSword.name=守护者之剑
+item.EnderDragonSword.name=末影龙剑
+
+#BattleAxes
+item.CoalBattleAxe.name=煤战斧
+item.LapisBattleAxe.name=青金石战斧
+item.RedstoneBattleAxe.name=红石战斧
+item.EmeraldBattleAxe.name=绿宝石战斧
+item.ObsidianBattleAxe.name=黑曜石战斧
+item.LavaBattleAxe.name=熔岩战斧
+item.SuperStarBattleAxe.name=下界之星战斧
+item.GuardianBattleAxe.name=守护者战斧
+item.EnderDragonBattleAxe.name=末影龙战斧
+
+#Bows
+item.CoalBow.name=煤弓
+item.LapisBow.name=青金石弓
+item.RedstoneBow.name=红石弓
+item.EmeraldBow.name=绿宝石弓
+item.ObsidianBow.name=黑曜石弓
+item.LavaBow.name=熔岩弓
+item.SuperStarBow.name=下界之星弓
+item.GuardianBow.name=守护者弓
+item.EnderDragonBow.name=末影龙弓
+
+#CONSOLE LOG
+#
+#
+#
+#End of Space-occupier
