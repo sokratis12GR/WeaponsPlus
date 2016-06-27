@@ -29,15 +29,6 @@ public class LapisBow extends ItemBow {
         this.setCreativeTab(WeaponsPlus.TAB_WEAPONSPLUS);
     }
 
-    @Override
-    public boolean hitEntity(ItemStack stack, EntityLivingBase target, EntityLivingBase attacker) {
-        stack.damageItem(1, attacker);
-        if (target instanceof EntityLivingBase) {
-            ((EntityLivingBase) target).addPotionEffect(new PotionEffect(MobEffects.NAUSEA, 120, 1, false, true));
-        }
-        return true;
-    }
-
     public boolean getIsRepairable(ItemStack toRepair, ItemStack repair) {
         return repair.getItem() == getItemFromBlock(Blocks.LAPIS_BLOCK);
     }

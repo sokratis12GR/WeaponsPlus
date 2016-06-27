@@ -22,6 +22,7 @@ public class ConfigGui extends GuiConfig {
 
         /** adds sections declared in ConfigHandler. toLowerCase() is used because the configuration class automatically does this, so must we. */
         list.add(new ConfigElement(ConfigHandler.config.getCategory("Recipes".toLowerCase())));
+        list.add(new ConfigElement(ConfigHandler.config.getCategory("GameModes".toLowerCase())));
         return list;
     }
 }

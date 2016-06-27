@@ -1,4 +1,24 @@
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+WeaponsPlus 1.9.4-2.0.0.0
+{Dependencies}
+* Update to require ArmorPlus 1.9.4-3.1.5.2 or later
+{Supported Minecraft Versions}
+* WeaponsPlus now supports both 1.9.4 and 1.10
+{Features Changed}
+* Removed Bows having special effect when hitting an entity (left click), Now the upgraded bow only has more durability
+* Lava Weapons' Recipes now use Lava Crystals
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+WeaponsPlus 1.9.4-1.0.9.0
+{Dependencies}
+* Update to require ArmorPlus 1.9.4-2.0.6.0 or later
+{Features Added}
+* Game Modes
+** Easy Mode
+** Expert Mode (Not Recommended for Beginners)
+{Versioning Changes}
+* Now Versioning should be as the following
+** MCVERSION-MAJORMOD.MAJORAPI.MINOR.PATCH
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 WeaponsPlus 1.8.0
 {Dependencies}
 * Update to require ArmorPlus 2.3.0 or later

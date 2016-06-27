@@ -1,6 +1,7 @@
 package sokratis12GR.WeaponsPlus.registry;
 
 import net.minecraft.item.Item;
+import net.minecraft.item.Item.ToolMaterial;
 import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -13,31 +14,31 @@ public class ModItems {
     /**
      * Swords
      * Float damageVsEntity + 4.0F
-     * public static Item.ToolMaterial MATERIAL = EnumHelper.addToolMaterial("MATERIAL", int harvestLevel, int maxUses, float efficiency, float damageVsEntity, int enchantability);
+     * public static ToolMaterial MATERIAL = EnumHelper.addToolMaterial("MATERIAL", int harvestLevel, int maxUses, float efficiency, float damageVsEntity, int enchantability);
      */
-    public static Item.ToolMaterial SWORD_COAL_MATERIAL = EnumHelper.addToolMaterial("SWORD_COAL_MATERIAL", 1, 59, 1.0F, 0.5F, 15);
-    public static Item.ToolMaterial SWORD_LAPIS_MATERIAL = EnumHelper.addToolMaterial("SWORD_LAPIS_MATERIAL", 1, 250, 1.0F, 1.0F, 30);
-    public static Item.ToolMaterial SWORD_REDSTONE_MATERIAL = EnumHelper.addToolMaterial("SWORD_REDSTONE_MATERIAL", 1, 200, 1.0F, 1.5F, 20);
-    public static Item.ToolMaterial SWORD_EMERALD_MATERIAL = EnumHelper.addToolMaterial("SWORD_EMERALD_MATERIAL", 1, 1561, 1.0F, 3.5F, 20);
-    public static Item.ToolMaterial SWORD_OBSIDIAN_MATERIAL = EnumHelper.addToolMaterial("SWORD_OBSIDIAN_MATERIAL", 1, 1500, 1.0F, 4.0F, 20);
-    public static Item.ToolMaterial SWORD_LAVA_MATERIAL = EnumHelper.addToolMaterial("SWORD_LAVA_MATERIAL", 1, 1750, 1.0F, 4.5F, 20);
-    public static Item.ToolMaterial SWORD_SUPER_STAR_MATERIAL = EnumHelper.addToolMaterial("SWORD_SUPER_STAR_MATERIAL", 1, 1750, 0.0F, 6.0F, 20);
-    public static Item.ToolMaterial SWORD_GUARDIAN_MATERIAL = EnumHelper.addToolMaterial("SWORD_GUARDIAN_MATERIAL", 1, 500, 1.0F, 3.0F, 30);
-    public static Item.ToolMaterial SWORD_ENDER_DRAGON_MATERIAL = EnumHelper.addToolMaterial("SWORD_ENDER_DRAGON_MATERIAL", 1, 2000, 1.0F, 8.0F, 20);
+    public static ToolMaterial SWORD_COAL_MATERIAL = EnumHelper.addToolMaterial("SWORD_COAL_MATERIAL", 1, 59, 1.0F, 0.5F, 15);
+    public static ToolMaterial SWORD_LAPIS_MATERIAL = EnumHelper.addToolMaterial("SWORD_LAPIS_MATERIAL", 1, 250, 1.0F, 1.0F, 30);
+    public static ToolMaterial SWORD_REDSTONE_MATERIAL = EnumHelper.addToolMaterial("SWORD_REDSTONE_MATERIAL", 1, 200, 1.0F, 1.5F, 20);
+    public static ToolMaterial SWORD_EMERALD_MATERIAL = EnumHelper.addToolMaterial("SWORD_EMERALD_MATERIAL", 1, 1561, 1.0F, 3.5F, 20);
+    public static ToolMaterial SWORD_OBSIDIAN_MATERIAL = EnumHelper.addToolMaterial("SWORD_OBSIDIAN_MATERIAL", 1, 1500, 1.0F, 4.0F, 20);
+    public static ToolMaterial SWORD_LAVA_MATERIAL = EnumHelper.addToolMaterial("SWORD_LAVA_MATERIAL", 1, 1750, 1.0F, 4.5F, 20);
+    public static ToolMaterial SWORD_SUPER_STAR_MATERIAL = EnumHelper.addToolMaterial("SWORD_SUPER_STAR_MATERIAL", 1, 1750, 0.0F, 6.0F, 20);
+    public static ToolMaterial SWORD_GUARDIAN_MATERIAL = EnumHelper.addToolMaterial("SWORD_GUARDIAN_MATERIAL", 1, 500, 1.0F, 3.0F, 30);
+    public static ToolMaterial SWORD_ENDER_DRAGON_MATERIAL = EnumHelper.addToolMaterial("SWORD_ENDER_DRAGON_MATERIAL", 1, 2000, 1.0F, 8.0F, 20);
     /**
      * BattleAxes
      * Float damageVsEntity + 4.0F
-     * public static Item.ToolMaterial MATERIAL = EnumHelper.addToolMaterial("MATERIAL", int harvestLevel, int maxUses, float efficiency, float damageVsEntity, int enchantability);
+     * public static ToolMaterial MATERIAL = EnumHelper.addToolMaterial("MATERIAL", int harvestLevel, int maxUses, float efficiency, float damageVsEntity, int enchantability);
      */
-    public static Item.ToolMaterial BATTLE_AXE_COAL_MATERIAL = EnumHelper.addToolMaterial("BATTLE_AXE_COAL_MATERIAL", 1, 59, 1.0F, 2.5F, 15);
-    public static Item.ToolMaterial BATTLE_AXE_LAPIS_MATERIAL = EnumHelper.addToolMaterial("BATTLE_AXE_LAPIS_MATERIAL", 1, 250, 1.0F, 3.0F, 30);
-    public static Item.ToolMaterial BATTLE_AXE_REDSTONE_MATERIAL = EnumHelper.addToolMaterial("BATTLE_AXE_REDSTONE_MATERIAL", 1, 200, 1.0F, 3.5F, 20);
-    public static Item.ToolMaterial BATTLE_AXE_EMERALD_MATERIAL = EnumHelper.addToolMaterial("BATTLE_AXE_EMERALD_MATERIAL", 1, 1561, 1.0F, 5.5F, 20);
-    public static Item.ToolMaterial BATTLE_AXE_OBSIDIAN_MATERIAL = EnumHelper.addToolMaterial("BATTLE_AXE_OBSIDIAN_MATERIAL", 1, 1500, 1.0F, 6.0F, 20);
-    public static Item.ToolMaterial BATTLE_AXE_LAVA_MATERIAL = EnumHelper.addToolMaterial("BATTLE_AXE_LAVA_MATERIAL", 1, 1750, 1.0F, 6.5F, 20);
-    public static Item.ToolMaterial BATTLE_AXE_SUPER_STAR_MATERIAL = EnumHelper.addToolMaterial("BATTLE_AXE_SUPER_STAR_MATERIAL", 1, 1750, 0.0F, 8.0F, 20);
-    public static Item.ToolMaterial BATTLE_AXE_GUARDIAN_MATERIAL = EnumHelper.addToolMaterial("BATTLE_AXE_GUARDIAN_MATERIAL", 1, 500, 1.0F, 5.0F, 30);
-    public static Item.ToolMaterial BATTLE_AXE_ENDER_DRAGON_MATERIAL = EnumHelper.addToolMaterial("BATTLE_AXE_ENDER_DRAGON_MATERIAL", 1, 2000, 1.0F, 10.0F, 20);
+    public static ToolMaterial BATTLE_AXE_COAL_MATERIAL = EnumHelper.addToolMaterial("BATTLE_AXE_COAL_MATERIAL", 1, 59, 1.0F, 2.5F, 15);
+    public static ToolMaterial BATTLE_AXE_LAPIS_MATERIAL = EnumHelper.addToolMaterial("BATTLE_AXE_LAPIS_MATERIAL", 1, 250, 1.0F, 3.0F, 30);
+    public static ToolMaterial BATTLE_AXE_REDSTONE_MATERIAL = EnumHelper.addToolMaterial("BATTLE_AXE_REDSTONE_MATERIAL", 1, 200, 1.0F, 3.5F, 20);
+    public static ToolMaterial BATTLE_AXE_EMERALD_MATERIAL = EnumHelper.addToolMaterial("BATTLE_AXE_EMERALD_MATERIAL", 1, 1561, 1.0F, 5.5F, 20);
+    public static ToolMaterial BATTLE_AXE_OBSIDIAN_MATERIAL = EnumHelper.addToolMaterial("BATTLE_AXE_OBSIDIAN_MATERIAL", 1, 1500, 1.0F, 6.0F, 20);
+    public static ToolMaterial BATTLE_AXE_LAVA_MATERIAL = EnumHelper.addToolMaterial("BATTLE_AXE_LAVA_MATERIAL", 1, 1750, 1.0F, 6.5F, 20);
+    public static ToolMaterial BATTLE_AXE_SUPER_STAR_MATERIAL = EnumHelper.addToolMaterial("BATTLE_AXE_SUPER_STAR_MATERIAL", 1, 1750, 0.0F, 8.0F, 20);
+    public static ToolMaterial BATTLE_AXE_GUARDIAN_MATERIAL = EnumHelper.addToolMaterial("BATTLE_AXE_GUARDIAN_MATERIAL", 1, 500, 1.0F, 5.0F, 30);
+    public static ToolMaterial BATTLE_AXE_ENDER_DRAGON_MATERIAL = EnumHelper.addToolMaterial("BATTLE_AXE_ENDER_DRAGON_MATERIAL", 1, 2000, 1.0F, 10.0F, 20);
 
     /**
      * Swords
@@ -107,7 +108,6 @@ public class ModItems {
         SUPER_STAR_BOW = new SuperStarBow();
         GUARDIAN_BOW = new GuardianBow();
         ENDER_DRAGON_BOW = new EnderDragonBow();
-
     }
 
     @SideOnly(Side.CLIENT)

@@ -20,7 +20,7 @@ public class CommandWeaponsPlus implements ICommand {
 
     @Override
     public String getCommandUsage(ICommandSender sender) {
-        return "weaponsplus";
+        return "/weaponsplus";
     }
 
     @Override
